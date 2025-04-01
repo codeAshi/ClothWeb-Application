@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #fff;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        form h1 {
+            text-align: center;
+        }
+        form h4 {
+            text-align: center;
+        }
+        form input {
+            width: 250px;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        form label {
+            margin-right: 10px;
+        }
+        form .icon {
+            position: absolute;
+            margin-top: 8px;
+            margin-left: 5px;
+            color: #ccc;
+        }
+        form .input-container {
+            position: relative;
+            padding-left: 45px;
+        }
+    form input[type="radio"] {
+        width: auto;
+        height: auto;
+        margin-right: 10px;
+    }
+        form input[type="submit"] {
+            background-color: #007bff;
+            color: rgb(0, 0, 0);
+           text-align: center;
+            border: none;
+            padding: 10 150px;
+           
+            border-radius: 10px;
+        }
+
+ .social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease; /* Add smooth transition effect */
+}
+
+.social-links a:hover {
+    transform: scale(1.2); /* Zoom effect on hover */
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Hover effect on social media icons */
+.social-links a:hover img {
+    filter: grayscale(0) brightness(1.2); /* Adjust brightness on hover */
+}
+    </style>
+</head>
+<body>
+    <form action="/login" method="post">
+        <h1>Login</h1>
+        
+        <div class="input-container">
+            <i class="icon fas fa-user"></i>
+            <input type="text" id="username" placeholder="     First Name*" required>
+        </div>
+        <div class="input-container">
+            <i class="icon fas fa-user"></i>
+            <input type="text" id="lastname" placeholder="     Last Name">
+        </div>
+        <div class="input-container">
+            <i class="icon fas fa-envelope"></i>
+            <input type="text" id="email" placeholder="     Email-ID*" required>
+        </div>
+        <div class="input-container">
+            <i class="icon fas fa-lock"></i>
+            <input type="password" id="password" placeholder="     Choose New Password">
+        </div>
+        <div class="input-container">
+            <i class="icon fas fa-lock"></i>
+            <input type="password" id="pass" placeholder="     Confirm Password*" required>
+        </div>
+        <div class="input-container">
+            <i class="icon fas fa-calendar-alt"></i>
+            <input type="text" id="dob" placeholder="      Enter Birth-Date*">
+        </div>
+        <div class="input-container">
+            <i class="icon fas fa-phone"></i>
+            <input type="text" id="mobno" placeholder="      Mobile Number*" required>
+        </div>
+        <label>Gender :</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label>Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label>Female</label>
+       <div class="login1">
+        <input type="submit" value="Register">
+    </div>
+        <h4>-OR-</h4>
+        <div class="social-links">
+            <a href="#"><img src="facebook.png" alt="gmail"></a>	
+            <a href="#"><img src="google1.png" alt="google"></a>	
+        </div>
+    </form>
+    <script src="valide.js"></script>
+</body>
+</html>

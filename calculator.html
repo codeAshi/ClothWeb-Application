@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draggable Calculator</title>
+<style>
+    /* Styles for calculator container and calculator content */
+    .calculator-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: none;
+    }
+
+    .calculator {
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+    
+			<div class="container">
+				<div class="navbar">
+					<div class="logo">
+					<img src="logo1.png" width="125px">
+					</div>
+					<nav>
+						<ul id="MenuItems">
+							<li>
+								<a href="">Home</a>
+							</li>
+							<li>
+								<a href="">Products</a>
+							</li>
+							<li>
+								<a href="">About</a>
+							</li>
+							<li>
+								<a href="">Contact</a>
+							</li>
+							<li>
+								<button onclick="openCalculator()">Open Calculator</button>
+							</li>
+						</ul>
+					</nav>
+					<img src="cart.png" width="25px" height="25px">
+					<img src="menu.png" width="25px" height="25px" class="menu-icon" onclick="menutoggle()">
+				</div>
+				
+			</div>
+			
+<!---------cart items details------->			
+		<div class="small-container cart-page">
+			<table>
+				<tr>
+					<th>Product</th>
+					<th>Quantity</th>
+					<th>Subtotal</th>
+				</tr>
+				<tr>
+					<td>
+						<div class="cart-info">
+							<img src="over1.png">
+							<div>
+							<p>Red Printed Tshirt</p>
+							<small>Price: $50.00</small>
+							<br>
+							<a href="">Remove</a>
+							</div>
+							</div>
+					
+					</td>
+					<td><input type="number" value="1"></td>
+					<td>$50.00</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<div class="cart-info">
+							<img src="men7.png">
+							<div>
+							<p>Red Printed Tshirt</p>
+							<small>Price: $70.00</small>
+							<br>
+							<a href="">Remove</a>
+							</div>
+							</div>
+					
+					</td>
+					<td><input type="number" value="1"></td>
+					<td>$50.00</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<div class="cart-info">
+							<img src="men11.png">
+							<div>
+							<p>Red Printed Tshirt</p>
+							<small>Price: $90.00</small>
+							<br>
+							<a href="">Remove</a>
+							</div>
+							</div>
+					
+					</td>
+					<td><input type="number" value="1"></td>
+					<td>$50.00</td>
+				</tr>
+			</table>
+			
+			
+			
+			<div class="total-price">
+			<table>
+				<tr>
+					<td>Subtotal</td>
+					<td>$200.00</td>
+				</tr>
+				
+				<tr>
+					<td>Tax</td>
+					<td>$30.00</td>
+				</tr>
+				
+				<tr>
+					<td>Total</td>
+					<td>$230.00</td>
+				</tr>
+				
+			
+			
+			
+			
+			
+			
+		</div>
+			
+
+	
+
+<div id="calculator-container" class="calculator-container">
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <br>
+        <input type="button" value="7" onclick="addToDisplay('7')">
+        <input type="button" value="8" onclick="addToDisplay('8')">
+        <input type="button" value="9" onclick="addToDisplay('9')">
+        <input type="button" value="/" onclick="addToDisplay('/')">
+        <br>
+        <input type="button" value="4" onclick="addToDisplay('4')">
+        <input type="button" value="5" onclick="addToDisplay('5')">
+        <input type="button" value="6" onclick="addToDisplay('6')">
+        <input type="button" value="*" onclick="addToDisplay('*')">
+        <br>
+        <input type="button" value="1" onclick="addToDisplay('1')">
+        <input type="button" value="2" onclick="addToDisplay('2')">
+        <input type="button" value="3" onclick="addToDisplay('3')">
+        <input type="button" value="-" onclick="addToDisplay('-')">
+        <br>
+        <input type="button" value="0" onclick="addToDisplay('0')">
+        <input type="button" value="." onclick="addToDisplay('.')">
+        <input type="button" value="C" onclick="clearDisplay()">
+        <input type="button" value="+" onclick="addToDisplay('+')">
+        <br>
+        <input type="button" value="=" onclick="calculate()">
+    </div>
+</div>
+
+<script>
+     function openCalculator() {
+        document.getElementById('calculator-container').style.display = 'block';
+    }
+    // Function to handle dragging of the calculator
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "-header")) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById(elmnt.id + "-header").onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+    // Make the calculator draggable
+    dragElement(document.getElementById('calculator-container'));
+
+    // Calculator functions
+    function addToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+        try {
+            document.getElementById('display').value = eval(document.getElementById('display').value);
+        } catch (error) {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+    var showCalculator = localStorage.getItem('showCalculator');
+    if (showCalculator === 'true') {
+        document.getElementById('calculator-container').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

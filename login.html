@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        table td {
+            padding: 10px;
+        }
+        .input-container {
+            position: relative;
+            text-align: left;
+        }
+        .icon {
+            position: absolute;
+            margin-top: 8px;
+            margin-left: 5px;
+            color: #ccc;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 250px;
+            height: 30px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 50px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+        .social-links img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <script src="valide.js"></script>
+    <form action="index.html" method="post">
+        <h1>Login</h1>
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div class="input-container">
+                        <i class="icon fas fa-user"></i>
+                        <input type="text" id="username" name="username" placeholder="     First Name*" required>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="input-container">
+                        <i class="icon fas fa-user"></i>
+                        <input type="text" id="lastname" name="lastname" placeholder="     Last Name">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="input-container">
+                        <i class="icon fas fa-envelope"></i>
+                        <input type="text" id="email" name="email" placeholder="     Email-ID*" required>
+                    </div>
+                </td>
+            </tr>
+          
+            <tr>
+                <td colspan="2">
+                    <div class="input-container">
+                        <i class="icon fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="     Choose New Password">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="input-container">
+                        <i class="icon fas fa-lock"></i>
+                        <input type="password" id="pass" name="pass" placeholder="     Confirm Password*" required>
+                    </div>
+                </td>
+            </tr>
+          
+            <tr>
+                <td colspan="2">
+                    <div class="input-container">
+                        <i class="icon fas fa-calendar-alt"></i>
+                        <input type="text" id="dob" name="dob" placeholder="     Enter Birth-Date*">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="input-container">
+                        <i class="icon fas fa-phone"></i>
+                        <input type="text" id="mobno" name="mobno" placeholder="     Mobile Number*" required>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>Gender :</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Register">
+                </td>
+            </tr>
+        </table>
+        <h4>-OR-</h4>
+        <div class="social-links">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>	
+            <a href="#"><img src="google1.png" alt="Google"></a>	
+        </div>
+    </form>
+    <script>
+        function saveName() {
+            // Get the value of the input field with id="nameInput"
+            var name = document.getElementById("nameInput").value;
+            
+            // Save the name to localStorage
+            localStorage.setItem("userName", name);
+            
+            // Redirect to the second page
+            window.location.href = "greeting.html";
+        }
+    </script>
+</body>
+</html>

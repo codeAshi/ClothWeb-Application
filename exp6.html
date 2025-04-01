@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input and Output Example</title>
+    <script>
+        function displayGreeting() {
+            // Get the value of the input field with id="nameInput"
+            var name = document.getElementById("nameInput").value;
+            
+            // Display the greeting message in the paragraph with id="greetingMessage"
+            document.getElementById("greetingMessage").innerHTML = "Hello, " + name + "!";
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Input and Output Example</h1>
+    
+    <form onsubmit="displayGreeting(); return false;">
+        <label for="nameInput">Enter your name:</label>
+        <input type="text" id="nameInput" name="nameInput" required>
+        <input type="submit" value="Submit">
+    </form>
+    
+    <p id="greetingMessage"></p>
+</body>
+</html>

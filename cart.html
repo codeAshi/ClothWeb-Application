@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cart- Sailila Aluminium </title>
+		<link rel="stylesheet" href="style.css">
+			
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<style>
+		  /* Styles for calculator container and calculator content */
+		  .calculator-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+		
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: none;
+    }
+
+    .calculator {
+        padding: 10px;
+    }
+	</style>
+	<body>
+		
+
+	
+			<div class="container">
+				<div class="navbar">
+					<div class="logo">
+					<img src="logo1.png" width="125px">
+					</div>
+					<nav>
+						<ul id="MenuItems">
+							<li>
+								<a href="">Home</a>
+							</li>
+							<li>
+								<a href="">Products</a>
+							</li>
+							<li>
+								<a href="">About</a>
+							</li>
+							<li>
+								<a href="">Contact</a>
+							</li>
+							<li>
+								<button onclick="openCalculator()">Open Calculator</button>
+							</li>
+						</ul>
+					</nav>
+					<img src="cart.png" width="25px" height="25px">
+					<img src="menu.png" width="25px" height="25px" class="menu-icon" onclick="menutoggle()">
+				</div>
+				
+			</div>
+			
+<!---------cart items details------->			
+
+<div class="swiper-slide box">
+	<img src="Images/orange.jpeg" alt="" width="280px" height="280px">
+	<h3>fresh orange</h3>
+	<div class="price">Rs 60 - 80/kg</div>
+	<div class="stars">
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star-half-alt"></i>
+	</div>
+	<a href="#" class="btn">add to cart</a>
+</div>
+
+<div class="swiper-slide box">
+	<img src="over1.png" alt="" width="280px" height="280px">
+	<h3>green cabbage</h3>
+	<div class="price">Rs 20 - 30/kg</div>
+	<div class="stars">
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star-half-alt"></i>
+	</div>
+	
+
+<div class="swiper-slide box">
+	<img src="men10.png" alt="" width="280px" height="280px">
+	<h3>fresh meat</h3>
+	<div class="price">Rs 200 - 300/kg</div>
+	<div class="stars">
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star-half-alt"></i>
+	</div>
+	
+<div class="swiper-slide box">
+	<img src="women5.png" alt="" width="280px" height="280px">
+	<h3>wheat</h3>
+	<div class="price">Rs 63 - 93/kg</div>
+	<div class="stars">
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star-half-alt"></i>
+	</div>
+		<div class="quantity-wrapper">
+		  <input type="number" min="1" value="1">
+		  <a href="">Remove</a>
+		</div>
+		<div class="subtotal">$90.00</div>
+	  </div>
+	</div>
+	<div class="cart-totals">
+	  <div class="total-row">
+		<p>Subtotal</p>
+		<span class="total-price">$210.00</span>
+	  </div>
+	  <div class="total-row">
+		<p>Tax (assumed 10%)</p>
+		<span class="total-price">$21.00</span>
+	  </div>
+	  <div class="total-row">
+		<p>Total</p>
+		<span class="total-price">$231.00</span>
+	  </div>
+	</div>
+  </div>
+	
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

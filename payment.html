@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+</head>
+<body>
+    <div class="payment" role="form" aria-labelledby="payment-form-title">
+        <h1 id="payment-form-title" class="payTitle">Personal Information</h1>
+        <label for="full-name">Name and Surname</label>
+        <input type="text" id="full-name" placeholder="Full Name" class="payInput" required>
+        <label for="phone-number">Phone Number</label>
+        <input type="tel" id="phone-number" placeholder="+91 12345677890" class="payInput" required pattern="[+]{1}[0-9]{2} [0-9]{10}">
+        <label for="address">Address</label>
+        <input type="text" id="address" placeholder="Enter Full Address" class="payInput" required>
+        <button type="button" class="payButton" id="buyNow">Buy Now</button>
+    </div>
+
+    <script>
+        document.getElementById('buyNow').addEventListener('click', async () => {
+            const name = document.getElementById('full-name').value;
+            const phone = document.getElementById('phone-number').value;
+            const address = document.getElementById('address').value;
+
+            try {
+                const response = await fetch('send_email.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, phone, address }),
+                });
+
+                if (response.ok) {
+                    alert('Order confirmed! Check your email for details.');
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error placing the order.');
+            }
+        });
+    </script>
+</body>
+</html>

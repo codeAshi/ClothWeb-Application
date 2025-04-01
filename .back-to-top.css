@@ -1,0 +1,33 @@
+.back-to-top {
+    display: none;
+    position: fixed;
+   
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.back-to-top img {
+    width: 40px;
+    height: 40px;
+}
+.back-to-top a:hover {
+    transform: scale(1.2); /* Zoom effect on hover */
+}
+.back-to-top.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Additional styles for animation (optional) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

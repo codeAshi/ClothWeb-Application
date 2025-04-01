@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="twostyle.css">
+    <style>
+        /* Additional CSS for the small box */
+        .search-results {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+            <img src="logo1.png" width="125px">
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Products</a>
+                    </li>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                    <li>
+                        <a href="">Account</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="cart.png" width="25px" height="25px">
+            <img src="menu.png" width="25px" height="25px" class="menu-icon"
+            onclick="menutoggle()">
+        </div>
+        
+    </div>
+
+        <div class="small-container">
+        <div class="row row-2">
+            <h2>ALL Products</h2>
+            <select>
+                <option>Default Shorting</option>
+                <option>Sort by price</option>
+                <option>Sort by popularity</option>
+                <option>Sort by rating</option>
+                <option>Sort by sale</option>
+            </select>
+            </div>
+            
+            <div class="row  margin-bottom30">
+            <div class=col -4">
+                <img src="women1.png">
+                
+                
+            </div>
+            <div class=col -4">
+                <img src="women5.png">
+            
+                
+            </div>
+            <div class=col -4">
+                <img src="women3.png">
+                
+            </div>
+            
+        </div>
+    <div class="small-container">
+        
+        <div class="row  margin-bottom30">
+            <div class=col -4">
+               
+                <img src="women4.png">
+                
+            </div>
+            <div class=col -4">
+                <img src="women5.png">
+                
+            </div>
+            <div class=col -4">
+                <img src="women6.png">
+                
+            </div>
+        </div>
+        
+        <!-- Search results box -->
+        <div class="search-results" id="searchResults">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // Function to handle the search prompt
+        function searchProducts() {
+            // Prompt the user for input
+            var searchTerm = prompt("What are you looking for?");
+            
+            // Check if the user entered something
+            if (searchTerm !== null && searchTerm.trim() !== "") {
+                // Display the search term in the search results box
+                var searchResultsBox = document.getElementById("searchResults");
+                searchResultsBox.innerHTML = "<strong>Search Results:</strong> " + searchTerm;
+            }
+        }
+
+        // Call the searchProducts function after 5 seconds
+        setTimeout(searchProducts, 5000); // 5000 milliseconds = 5 seconds
+    </script>
+</body>
+</html>

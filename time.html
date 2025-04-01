@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Current Time</title>
+<script>
+    function updateTime() {
+        // Get the current date and time
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+
+        // Add leading zeros to single-digit numbers
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        // Format the time as HH:MM:SS
+        var currentTime = hours + ':' + minutes + ':' + seconds;
+
+        // Update the time display on the webpage
+        document.getElementById('time').innerHTML = currentTime;
+    }
+
+    // Call updateTime function every second to update the time
+    setInterval(updateTime, 1000);
+</script>
+</head>
+<body>
+
+<h1>Current Time</h1>
+
+<p>The current time is: <span id="time"></span></p>
+
+</body>
+</html>
