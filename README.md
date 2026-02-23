@@ -1,4 +1,4 @@
-# 🌟 Cloth Web Application
+# 🌟 Clothing Store Web Application
 
 A modern and responsive **Online Clothing Store Web Application** built with HTML, CSS, JavaScript and PHP.  
 This project showcases a full-stack web application where users can browse clothing items and explore different parts of a clothing store experience.
